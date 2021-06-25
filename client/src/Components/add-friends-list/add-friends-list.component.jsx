@@ -1,12 +1,12 @@
 import AddFriend from "../add-friend/add-friend.component";
-import { userProfileForAddFriend } from '../../profilesObj';
+// import { userProfileForAddFriend } from '../../profilesObj';
 import { Component } from "react";
 import './add-friends-list.styles.scss';
 import { requestToGraphQl } from "../../graphql/graphql";
 
 class AddFriendsList extends Component {
   state = {
-    users: userProfileForAddFriend
+    users: []
   }
 
   removeUser = (targetUserName) => {

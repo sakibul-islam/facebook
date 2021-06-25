@@ -2,7 +2,6 @@
 // import CreatePostPreview from '../../Components/post/create-post-preview/create-post-preview.component';
 // import ShowPost from '../../Components/post/show-post/show-post.component';
 // import posts from '../../posts';
-import profiles from '../../profilesObj';
 
 import './profile.styles.scss';
 import homeIcon from './home.png'
@@ -30,9 +29,11 @@ const Profile = ({userName}) =>  {
         born
       }}`
     }).then(result => {
+      console.log(result)
       setProfile(result.data.user)
     }).catch(err => {
-      setProfile(profiles[userName])
+      // setProfile(profiles[userName])
+      console.log(err)
     })
   }, [userName])
   const { displayName, nickName, photoURL, photos, coverURL, bio, born, followers } = profile;

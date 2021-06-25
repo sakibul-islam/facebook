@@ -2,7 +2,7 @@ import ProfilePic from '../profile-pic/profile-pic.component';
 import './dropdown-messenger.styles.scss';
 import { ThreeDotsIcon } from '../icons/icons';
 import TextInput from '../text-input/text-input.component';
-import { sakib } from "../../profilesObj";
+// import { sakib } from "../../profilesObj";
 
 const DropdownMessenger = () => (
   <div className='dropdown-messenger'>
@@ -47,7 +47,7 @@ const DropdownMessenger = () => (
         </div>
       </div>
       <div className='conversation-container'>
-        <ProfilePic photoURL={sakib.photoURL}/>
+        <ProfilePic photoURL={"https://lh3.googleusercontent.com/a-/AOh14GhBPYYIvX9VuKQh_4uiK0qLtyfvXneAGNP9cl0VGA=s96-c"}/>
         <div className='conversation'>
           <span className='name'>Sakibul Islam</span>
           <span className='last-message'>
