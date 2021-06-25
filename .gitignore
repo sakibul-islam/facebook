@@ -44,11 +44,9 @@ build/Release
 
 # Dependency directories
 node_modules/
-public
-public/uploads
+/public
 jspm_packages/
 
-posts.js
 request.http
 profilesObj.js
 

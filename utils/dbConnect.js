@@ -5,7 +5,7 @@ const connection = {}
 const dbConnect = async () => {
   if(connection.isConnected) return;
   try {
-    const db = await mongoose.connect("mongodb+srv://sakib:sakib1231@cluster0.sqj22.mongodb.net/facebook?retryWrites=true&w=majority", {
+    const db = await mongoose.connect(process.env.MONGO_CONNECTION_STRING, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
