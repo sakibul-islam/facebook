@@ -3,18 +3,13 @@ const cors = require("cors");
 const app = express();
 const path = require("path");
 const Post = require("./models/posts");
+const fs = require("fs");
 
 var multer = require("multer");
 
 const { graphqlHTTP } = require("express-graphql");
 const { rootSchema } = require("./graphql/root-schema");
-const mongoose = require("mongoose");
 const port = process.env.PORT || 4000;
-
-mongoose.connect("mongodb://localhost/facebook", {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-});
 
 app.use(cors());
 app.use(
@@ -44,7 +39,9 @@ app.get("*", (req, res) => {
 
 const storage = multer.diskStorage({
 	destination: function (req, file, cb) {
-		cb(null, "./public/uploads");
+		const path = "./public/uploads";
+		fs.mkdirSync(path, { recursive: true })
+		cb(null, path);
 	},
 	filename: function (req, file, cb) {
 		cb(null, new Date().getTime().toString() + path.extname(file.originalname));
@@ -67,6 +64,7 @@ app.post("/post/new", upload.single("photo"), function (req, res, next) {
 	if(file && file.size > 3000000) {
 		return res.status(500).json({
 			success: false,
+			failed: true,
 			message: "Files more than 3MB is not allowed to post",
 		});
 	}
@@ -76,10 +74,9 @@ app.post("/post/new", upload.single("photo"), function (req, res, next) {
 		if (!file) return;
 		if (file.mimetype.match("image")) {
 			photoURL = file.path;
-			console.log(__dirname);
 			return { photoURL };
 		} else if (file.mimetype.match("video")) {
-			videoURL = "http://localhost:3001/" + file.path;
+			videoURL = file.path;
 			return { videoURL };
 		}
 	}
@@ -97,8 +94,10 @@ app.post("/post/new", upload.single("photo"), function (req, res, next) {
 		});
 		return post.save();
 	}
-	savePostToDatabase(req).then(console.log);
-	res.status(200);
+	savePostToDatabase(req).then(post => {
+		console.log(post);
+		res.status(200).json({post});
+	});
 });
 
 app.get("/public/uploads:");

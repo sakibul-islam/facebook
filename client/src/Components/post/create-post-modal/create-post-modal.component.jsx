@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./create-post-modal.styles.scss";
 // import { requestToGraphQl } from "../../../graphql/graphql";
 // import PostsContext from "../../../contexts/posts.context";
@@ -114,8 +114,12 @@ const CreatePostModal = ({ userName, photoURL, displayName, setModal }) => {
 			.then(res => res.json())
 			.then(res => {
 				console.log(res)
-				if(!res.success) {
+				if(res.failed) {
 					alert(res.message)
+				}
+				if(res.post) {
+					// setPosts([res.post, ...posts])
+
 				}
 			})
 			.catch(error => {
