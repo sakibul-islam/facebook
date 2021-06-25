@@ -1,0 +1,10 @@
+.name-component {
+  font-weight: bold;
+  color: rgb(65, 65, 65);
+  margin-right: 5px;
+  
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

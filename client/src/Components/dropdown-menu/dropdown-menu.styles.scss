@@ -1,0 +1,70 @@
+@import '../../layout.scss';
+@import '../../colors.scss';
+
+.dropdown-menu {
+  padding: 10px;
+
+  
+  .item {
+    @include fr-v-c();
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    min-height: 52px;
+    
+    &:hover {
+      background-color: $bg-primary-color;
+      cursor: pointer;
+    }
+
+    .icon-container {
+      padding: 10px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background-color: $bg-primary-color;
+    }
+
+    &.on {
+      .icon-container {
+        background-color: #c4dcfc;
+      }
+    }
+    .other {
+      @include fc-h-fs();
+      font-family: 'Segoe UI Semibold', "Segoe UI Historic", Helvetica, Arial, sans-serif;
+
+      .name {
+        font-size: 15px;
+      }
+      .message {
+        font-size: 13px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+    }
+    
+    &.signin {
+      .message {
+        color: $bg-primary-blue;
+      }
+    }
+
+    &.profile {
+      .profile-pic {
+        height: 60px;
+        width: 60px;
+        margin-right: 10px;
+      }
+      .other {
+        .name {
+          font-size: 18px;
+        }
+        .message {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  
+}
+

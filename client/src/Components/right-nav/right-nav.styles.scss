@@ -1,0 +1,124 @@
+@import '../../layout.scss';
+@import '../../colors.scss';
+
+.right-nav {
+  display: flex;
+  align-items: center;
+
+  .content {
+    position: fixed;
+    top: 56px;
+    right: 0;
+    padding-top: 20px;
+    max-width: 300px;
+    height: calc(100% - 56px);
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar-track {
+        border-radius: 6px;
+      }
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background-color: #bcc0c4;
+        visibility: hidden;
+      }
+      
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        visibility: visible;
+      }
+    }
+    
+    .item {
+      @include fr-v-c();
+      display: flex;
+      border-radius: 10px;
+      padding: 8px;
+      // min-height: 52px;
+      
+      &:hover {
+        background-color: $bg-primary-color2;
+        cursor: pointer;
+      }
+  
+      .profile-pic {
+        width: 35px;
+        height: 35px;
+      }
+      .icon-container {
+        max-width: 100px;
+        margin-right: 10px;
+        i {
+          filter: $filter-to-gray;
+        }
+        img {
+          width: 100%;
+        }
+      }
+  
+      .others {
+        @include fc-h-fs();
+        font-family: 'Segoe UI Semibold', "Segoe UI Historic", Helvetica, Arial, sans-serif;
+        
+        .item-name {
+          font-size: 15px;
+          text-align: left;
+          text-overflow: ellipsis;
+        }
+        .extra {
+          font-size: 12px;
+          color: $bg-primary-blue;
+          font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+      }
+    }
+
+    
+    .section {
+      .header {
+        text-align: left;
+        margin: 5px;
+        font-size: 15px;
+        font-weight: 700;
+        color: gray;
+      }
+
+      &.sponsored {
+        .item {
+          margin-right: 10px;
+        }
+      }
+
+      &.pages {
+        .page {
+          color: gray;
+          .updates {
+            .item {
+              padding: 0 25px;
+              min-height: 40px;
+            }
+          }
+        }
+      }
+
+      &.group-conversations {
+        .icon-container {
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+          background-color: $bg-secondary-color;
+        }
+      }
+      
+    }
+
+    hr {
+      width: calc(100% - 16px);
+    }
+
+  }
+
+}

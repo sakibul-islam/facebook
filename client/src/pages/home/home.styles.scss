@@ -1,0 +1,37 @@
+.home {
+  display: flex;
+  justify-content: space-between;
+  background-color: #F0F2F5;
+
+  .left-nav, .right-nav {
+    width: 25%;
+  }
+  .contents {
+    width: 50%;
+  } 
+
+  @media (max-width: 1100px) {
+    .left-nav {
+      display: none;
+    }
+    .contents {
+      width: 60%;
+    }
+    .right-nav {
+      width: 40%;
+    }
+  }
+  @media (max-width: 900px) {
+    justify-content: center;
+
+    .left-nav, .right-nav {
+      display: none;
+    }
+    .contents {
+      width: 100%;
+    }
+  }  
+}
+
+
+

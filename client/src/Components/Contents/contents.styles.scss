@@ -1,0 +1,21 @@
+.contents {
+  width: 50%;
+  max-width: 600px;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F0F2F5;
+  
+  .create-post, .post {
+    width: 100%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+  @media (max-width: 600px) {
+    padding: 0;
+  }
+}

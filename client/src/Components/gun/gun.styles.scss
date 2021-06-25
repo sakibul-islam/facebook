@@ -1,0 +1,109 @@
+.gun {
+  height: 50vh;
+  position: fixed;
+  bottom: 0;
+  right: 15vw;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  img {
+      height: 100%;
+      margin: auto;
+  }
+  @media screen and (max-width: 700px) {
+    right: 0;
+    left: 15vw;
+    img {
+      padding-top: 100%;
+      margin: 0;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  
+
+  &.gun-in {
+    animation: gunIn .3s;
+  }
+
+  &.triggered {
+    animation: shakeGun .2s infinite;
+  }
+
+  &.gun-out {
+    animation: gunOut .3s;
+  }
+
+  @keyframes gunIn {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    from {
+      opacity: 0;
+      transform: translate3d(0, 3000px, 0) scaleY(5);
+    }
+  
+    60% {
+      opacity: 1;
+      transform: translate3d(0, 20px, 0) scaleY(0.9);
+    }
+  
+    75% {
+      transform: translate3d(0, 40px, 0) scaleY(0.95);
+    }
+  
+    90% {
+      transform: translate3d(0, 5px, 0) scaleY(0.985);
+    }
+  
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes gunOut {
+    20% {
+      bottom: 0;
+      transform: translate3d(0, 10px, 0);
+    }
+  
+    40%,
+    45% {
+      opacity: 1;
+      transform: translate3d(0, -20px, 0) ;
+    }
+  
+    to {
+      bottom: -40%;
+      opacity: 0;
+      transform: translate3d(0, 200px, 0);
+    }
+  }
+  @keyframes shakeGun {
+    from,
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translate3d(-10px, 0, 0);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translate3d(10px, 0, 0);
+    }
+  }
+}

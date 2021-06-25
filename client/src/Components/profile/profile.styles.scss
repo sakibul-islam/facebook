@@ -1,0 +1,128 @@
+@import '../../layout.scss';
+@import '../../colors.scss';
+
+.profile-page {
+  @include v-center();
+  flex-direction: column;
+  background-color: #F0F2F5;
+  padding-bottom: 50px;
+
+  .profile-header {
+    @include h-center();
+    flex-direction: column;
+    width: 100%;
+    background: linear-gradient(to top, white, rgba(75, 75, 75, 0.726));
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.205);
+    margin-bottom: 10px;
+
+    .header-pic {
+      @include h-center();
+      position: relative;
+      width: 100%;
+      height: 40vw;
+      max-height: 400px;
+
+      .cover-pic {
+        width: 100%;
+        max-width: 1000px;
+        border-radius: 0 0 10px 10px;
+        background-size: cover;
+      }
+      .profile-pic {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        bottom: -20px;
+        border: 3px solid white;
+        background-size: cover;
+        background-position: center;
+      }
+
+    }
+
+    .name-bio {
+      padding: 20px 0 20px;
+
+      .names {
+        font-size: 32px;
+        .display-name {
+          font-weight: 700;
+        }
+      }
+      
+      .bio {
+        font-size: 20px;
+        color: rgb(65, 65, 65);
+      }
+    }
+    
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 30px;
+      margin: 20px 0;
+      width: 100%;
+      box-shadow: $shadow-secondary;
+      border-radius: 10px;
+
+      .heading {
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .section {
+        display: flex;
+        padding: 10px 0;
+        
+        span {
+          margin-right: 5px;
+        }
+        
+        .icon {
+          img {
+            filter: invert(0.59) sepia(0.11);
+          }
+        }
+
+        .link {
+          font-weight: bold;
+          color: rgb(61, 61, 61);
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }    
+    }
+    
+    .photos {
+      box-shadow: $shadow-secondary;
+      border-radius: 10px;
+      width: 100%;
+      padding: 10px;
+      display: grid;
+      grid-gap: .5rem;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .photo {
+        background-position: center;
+        background-size: cover;
+        box-shadow: $shadow-primary;
+
+        &::after {
+          content: '';
+          display: block;
+          padding-bottom: 100%;
+        }
+      }
+    }
+  }
+}

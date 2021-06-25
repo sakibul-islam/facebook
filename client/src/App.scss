@@ -1,0 +1,25 @@
+@import './colors.scss';
+
+html {
+  height: 100%;
+  background-color: $bg-primary-color;
+}
+.App {
+  text-align: center;
+
+  .left-nav.fixed {
+    position: fixed;
+    top: 56px;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 100;
+
+    .content {
+      width: 100%;
+    }
+  }
+}
+* {
+  box-sizing: border-box;
+}

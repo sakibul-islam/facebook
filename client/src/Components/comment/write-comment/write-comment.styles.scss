@@ -1,0 +1,36 @@
+@import '../../../layout.scss';
+@import '../../../colors.scss';
+
+.write-comment {
+  @include fr-h-fs();
+  padding: 10px;
+
+  .input {
+    @include fr-h-sb();
+    @include v-center();
+    width: 100%;
+    min-height: 40px;
+    margin-left: 10px;
+    background-color: $bg-primary-color;
+    border-radius: 20px;
+    padding: 0 10px;
+    
+
+    textarea, input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      height: auto;
+      background-color: inherit;
+      display: inline-block;
+      font-family: inherit;
+      resize: vertical;
+    }
+    textarea::-webkit-input-placeholder {
+      height: 100%;
+    }
+    .send-button.enable i {
+      filter: invert(0.39) sepia(0.57) saturate(15.4775) hue-rotate(202deg) brightness(.97) contrast(0.96);
+    }
+  }
+}

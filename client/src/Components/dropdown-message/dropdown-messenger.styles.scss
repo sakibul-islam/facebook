@@ -1,0 +1,81 @@
+@import '../../layout.scss';
+@import '../../colors.scss';
+
+.dropdown-messenger {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  
+  .header {
+    font-size: 20px;
+    font-weight: bold;
+    @include fr-h-sb();
+    padding: 10px 0;
+
+    .menu {
+      display: flex;
+      padding: 10px;
+      border-radius: 50%;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $bg-primary-color;
+      }
+    }
+  }
+
+  .conversations-container {
+    
+    .conversation-container {
+      @include fr-v-c();
+
+      .profile-pic {
+        height: 55px;
+        width: 55px;
+        margin-right: 10px;
+      }
+      display: flex;
+      margin-top: 10px;
+      border-radius: 10px;
+
+      &:hover {
+        background-color: $bg-primary-color;
+        cursor: pointer;
+      }
+
+      .conversation {
+        @include fc-h-fs();
+
+        .name {
+          font-size: 18px;
+          font-weight: 500;
+        }
+        .last-message {
+          font-size: 15px;
+          font-weight: 400;
+          .body {
+            text-align: left;
+
+            .link {
+              font-weight: bold;
+              margin-right: 5px;
+            }
+          }
+          .time {
+            margin-left: 20px;
+            position: relative;
+            line-height: 1;
+
+            &::before {
+              content: '';
+              border: 1px solid rgba(0, 0, 0, 0.5);
+              position: absolute;
+              left: -8px;
+              top: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

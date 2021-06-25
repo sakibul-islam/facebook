@@ -1,0 +1,59 @@
+@import '../../../layout.scss';
+@import '../../../colors.scss';
+
+.create-post {
+  margin: 10px;
+  .card {
+    padding: 10px;
+    margin: 0;
+
+    .header {
+      @include v-center();
+      justify-content: space-between;
+      flex-shrink: 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #D2D2D2;
+
+      .profile-pic {
+        margin-left: 10px;
+        flex-shrink: 0;
+      }
+      .hover-button {
+        width: 100%;
+        height: 40px;
+        margin-left: 10px;
+        border-radius: 20px;
+        background-color: $bg-primary-color;
+        padding: 0 10px;
+        @include v-center();
+        justify-content: flex-start;
+
+        &:hover {
+          background-color: $bg-secondary-color;
+        }
+      }
+    }
+
+    .media {
+      @include v-center();
+      justify-content: space-between;
+      padding-top: 10px;
+      
+      .hover-button {
+        flex: auto;
+        height: 40px;
+        @include v-center();
+
+        .icon {
+          margin-right: 5px;
+        }
+
+        .btn-name {
+          @media screen and (max-width: 700px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import '../../colors.scss';
+
+.friends-page {
+  background-color: $bg-primary-color;
+  min-height: 100%;
+  padding: 20px 20px 200px;
+  display: flex;
+  flex-direction: column;
+
+  .user-list {
+    margin-top: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    min-height: 445px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: $shadow-secondary;
+  }
+}

@@ -1,0 +1,51 @@
+@mixin v-center {
+  display: flex;
+  align-items: center;
+}
+@mixin h-center {
+  display: flex;
+  justify-content: center;
+}
+@mixin fr-h-sb {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin fr-h-fs {
+  display: flex;
+  justify-content: flex-start;
+}
+@mixin fr-h-fe {
+  display: flex;
+  justify-content: flex-end;
+}
+@mixin fr-v-fs {
+  display: flex;
+  align-items: flex-start;
+}
+@mixin fr-v-fe {
+  display: flex;
+  align-items: flex-end;
+}
+
+@mixin fr-v-c {
+  display: flex;
+  align-items: center;
+}
+
+@mixin fc-h-fs {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+@mixin hover-button {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}

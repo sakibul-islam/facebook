@@ -1,0 +1,11 @@
+@import '../../layout.scss';
+
+.user-card {
+  
+  .accepted {
+    @include hover-button();
+    margin: 5px 0;
+    cursor: auto;
+    background-color: rgba(65, 126, 182, 0.493);
+  }
+}

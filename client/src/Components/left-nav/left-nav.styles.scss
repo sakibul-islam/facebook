@@ -1,0 +1,73 @@
+@import '../../layout.scss';
+@import '../../colors.scss';
+
+.left-nav {
+  width: 30vw;
+
+  display: flex;
+  align-items: center;
+
+  .content {
+    position: fixed;
+    top: 56px;
+    padding-top: 20px;
+    width: 290px;
+    padding-left: 10px;
+    height: calc(100% - 56px);
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar-track {
+      border-radius: 6px;
+    }
+    &::-webkit-scrollbar {
+      display: block;
+      width: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      visibility: hidden;
+      border-radius: 6px;
+      background-color: #bcc0c4;
+    }
+
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        visibility: visible;
+      }
+    }
+
+
+    .item {
+      @include fr-v-c();
+      display: flex;
+      border-radius: 10px;
+      // min-height: 52px;
+      
+      &:hover {
+        background-color: $bg-primary-color2;
+        cursor: pointer;
+      }
+  
+      .profile-pic {
+        width: 35px;
+        height: 35px;
+      }
+      .icon-container {
+        margin-right: 10px;
+      }
+  
+      .others {
+        @include fc-h-fs();
+        font-family: 'Segoe UI Semibold', "Segoe UI Historic", Helvetica, Arial, sans-serif;
+  
+        .name {
+          font-size: 15px;
+        }
+        .extra {
+          font-size: 12px;
+          color: $bg-primary-blue;
+          font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import '../../layout.scss';
+
+.item {
+  @include fr-v-c();
+  border-radius: 10px;
+  min-height: 52px;
+  
+  &:hover {
+    cursor: pointer;
+  }
+
+  .icon-container {
+    margin-right: 10px;
+  }
+
+  .others {
+    @include fc-h-fs();
+    font-family: 'Segoe UI Semibold', "Segoe UI Historic", Helvetica, Arial, sans-serif;
+
+    .name {
+      font-size: 15px;
+    }
+    .extra {
+      font-size: 13px;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  }
+}

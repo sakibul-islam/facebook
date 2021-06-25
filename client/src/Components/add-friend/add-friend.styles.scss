@@ -1,0 +1,29 @@
+@import '../../colors.scss';
+@import '../../layout.scss';
+
+.user-card {
+  .sent-request, .cancel-request {
+    @include hover-button();
+    width: 100%;
+    color: white;
+    margin: 5px 0;
+  }
+  .sent-request {     
+    background-color: $bg-primary-blue;
+
+    &:hover {
+      background-color: $bg-hover-primary-blue;
+    }
+  }
+
+  .cancel-request {
+    color: black;
+    background-color: rgba(255, 0, 0, 0.397);
+    
+    &:hover {
+      color: white;
+      background-color: darkred;
+    }
+  }
+}
+  

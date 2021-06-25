@@ -1,0 +1,62 @@
+@import '../../layout.scss';
+@import '../../colors.scss';
+
+.dropdown-notification {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  
+  .header {
+    font-size: 20px;
+    font-weight: bold;
+    @include fr-h-sb();
+    padding: 10px 0;
+
+    .menu {
+      display: flex;
+      padding: 10px;
+      border-radius: 50%;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $bg-primary-color;
+      }
+    }
+  }
+
+  .notifications-container {
+    .profile-pic {
+      height: 55px;
+      width: 55px;
+      margin-right: 10px;
+    }
+    .notification-container {
+      display: flex;
+      margin-bottom: 10px;
+      border-radius: 10px;
+
+      &:hover {
+        background-color: $bg-primary-color;
+        cursor: pointer;
+      }
+
+      .notification {
+        @include fc-h-fs();
+        flex-direction: column;
+
+        .body {
+          text-align: left;
+
+          .link {
+            font-weight: bold;
+            margin-right: 5px;
+          }
+        }
+
+        .time {
+          color: $bg-primary-blue;
+        }
+      }
+    }
+  }
+}
